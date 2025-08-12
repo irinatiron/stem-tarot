@@ -14,8 +14,8 @@ export default function HomePage() {
 
     return (
         <div className="mainContainer">
-            <h1>Cartas del Tarot</h1>
-            <p>Haz clic en una carta para ver su significado.</p>
+            <h1 className="pageTitle">Cartas del Tarot</h1>
+            <p className="pageIntro">Haz clic en una carta para ver su significado.</p>
             <div className={styles["cardsContainer"]}>
                 {cards.map(card => (
                     <Link to={`/card/${card.id}`} key={card.id}>

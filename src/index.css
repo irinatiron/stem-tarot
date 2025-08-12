@@ -73,7 +73,6 @@ body {
   max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  margin: 1% 5%;
 }
 
 h1 {
@@ -82,8 +81,11 @@ h1 {
   line-height: 1.1;
   color: var(--pBlack);
   text-transform: uppercase;
-  margin: 20px 0;
   cursor: default;
+}
+
+.pageTitle, .pageIntro {
+  margin: 1% 5%;
 }
 
 h2 {
