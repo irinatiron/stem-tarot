@@ -1,0 +1,18 @@
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1% 0;
+}
+
+.cardBack {
+    max-width: 260px;
+    height: auto;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.cardsContainer img {
+    filter: drop-shadow(5px 5px 5px var(--pBlack));
+}

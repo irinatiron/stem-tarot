@@ -1,68 +1,101 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Importar fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Murecho:wght@100;200;300;400;500;600;700;800;900&family=Aboreto&display=swap');
 
-  color-scheme: light dark;
+/* RESET CSS */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+html, body {
+    overflow: auto;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+
+/* COLOR PALETTE */
+:root {
+    --pRed: #b56576;
+    --pYellow: #eaac8b;
+    --pBlue: #355070;
+    --pBlack: #1c1c1c;
+    --sPink: #df9dd6;
+    --sPurple: #8d67a6;
+    --sLilac: #6d597a;
+    --sBlue: #8ca5cc;
+
+  font-family: Murecho, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+@font-face {
+  font-family: "MvokyDemo";
+  src: url("./assets/fonts/MvokyDEMO-ExtraBlack.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
-a:hover {
-  color: #535bf2;
+
+@font-face {
+  font-family: "Mullingar";
+  src: url("./assets/fonts/Mullingar-lgKPw.otf") format("opentype"),
+       url("./assets/fonts/Mullingar-nRgnO.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
+  font-family: 'Murecho', serif;
+  line-height: 1.3;
+  background: #EAAC8B;
+  background: radial-gradient(circle, rgba(234, 172, 139, 1) 10%, rgba(219, 86, 86, 1) 90%);
+}
+
+.mainContainer {
+  max-width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
+  margin: 1% 5%;
 }
 
 h1 {
-  font-size: 3.2em;
+  font-family: "MvokyDemo", serif;
+  font-size: 3em;
   line-height: 1.1;
+  color: var(--pBlack);
+  text-transform: uppercase;
+  margin: 20px 0;
+  cursor: default;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+h2 {
+  font-family: "Mullingar", serif;
+  font-size: 2.5em;
+}
+
+h3 {
+  font-family: "Mullingar", serif;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+p {
+  font-size: 1.2em;
 }
