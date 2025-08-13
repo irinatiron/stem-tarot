@@ -3,6 +3,8 @@ import Layout from "../components/Layout";
 import LandingPage from "../pages/LandingPage";
 import HomePage from "../pages/HomePage";
 import CardDetailPage from "../pages/CardDetailPage";
+import ReadingPage from "../pages/ReadingPage";
+import AboutPage from "../pages/AboutPage";
 
 const router = createBrowserRouter([
   // Página inicial sin Layout
@@ -10,8 +12,10 @@ const router = createBrowserRouter([
   {
     element: <Layout />,  
     children: [
-      { path: "/home", element: <HomePage /> },
-      { path: "/card/:id", element: <CardDetailPage /> },
+      { path: "/cartas", element: <HomePage /> },
+      { path: "/carta/:id", element: <CardDetailPage /> },
+      { path: "/lectura", element: <ReadingPage /> },
+      { path: "/contacto", element: <AboutPage /> },
     ],
   },
 ]);

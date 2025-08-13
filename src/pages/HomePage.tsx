@@ -18,7 +18,7 @@ export default function HomePage() {
             <p className="pageIntro">Haz clic en una carta para ver su significado.</p>
             <div className={styles["cardsContainer"]}>
                 {cards.map(card => (
-                    <Link to={`/card/${card.id}`} key={card.id}>
+                    <Link to={`/carta/${card.id}`} key={card.id}>
                         <img
                             src="/images/card-back.png"
                             alt="Carta boca abajo"
