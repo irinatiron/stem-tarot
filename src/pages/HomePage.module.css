@@ -1,18 +1,19 @@
 .cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 1% 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem; /* espacio entre cartas */
+  margin-top: 2rem;
 }
 
 .cardBack {
-    max-width: 260px;
-    height: auto;
-    margin: 0;
-    box-sizing: border-box;
-    cursor: pointer;
+  width: 150px; /* tamaño fijo para mantener orden */
+  height: auto;
+  cursor: pointer;
+  filter: drop-shadow(5px 5px 5px var(--pBlack));
+  transition: transform 0.2s ease-in-out;
 }
 
-.cardsContainer img {
-    filter: drop-shadow(5px 5px 5px var(--pBlack));
+.cardBack:hover {
+  transform: scale(1.05);
 }

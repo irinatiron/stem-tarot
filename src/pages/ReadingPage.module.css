@@ -1,0 +1,111 @@
+.positionsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.position {
+  width: 30%;
+  text-align: center;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.cardBack {
+  width: 150px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.cardBack:hover {
+  transform: scale(1.05);
+}
+
+.cardImage {
+  width: 150px;
+}
+
+.buttonsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 20px auto;
+}
+
+.readButton {
+  background-color: var(--pYellow);
+  color: var(--pBlack);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.resetButton {
+  display: block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  background-color: var(--pBlack);
+  color: var(--pYellow);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  color: black;
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.readingCard {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.readingCard img {
+  max-width: 150px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.borderPast {
+  border: 4px solid var(--aSalmon);
+  border-radius: 8px;
+}
+
+.borderPresent {
+  border: 4px solid var(--aLighGreen);
+  border-radius: 8px;
+}
+
+.borderFuture {
+  border: 4px solid var(--aLightBlue);
+  border-radius: 8px;
+}

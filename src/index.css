@@ -28,14 +28,23 @@ html, body {
 
 /* COLOR PALETTE */
 :root {
+  /* Primary colors */
     --pRed: #b56576;
     --pYellow: #eaac8b;
     --pBlue: #355070;
     --pBlack: #1c1c1c;
+    /* Secondary colors */
     --sPink: #df9dd6;
     --sPurple: #8d67a6;
     --sLilac: #6d597a;
     --sBlue: #8ca5cc;
+    /* Accent and Arcana colors */
+    --aRed: #d63c2f;
+    --aGreen: #df9dd6;
+    --aSalmon: #d64b3e;
+    --aLighGreen: #b7b785;
+    --aLightBlue: #a1c4ca;
+    --aLightYellow: #eccf74;
 
   font-family: Murecho, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
