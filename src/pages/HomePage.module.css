@@ -2,12 +2,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem; /* espacio entre cartas */
+  gap: 1rem; 
   margin-top: 2rem;
 }
 
 .cardBack {
-  width: 150px; /* tamaño fijo para mantener orden */
+  width: 150px; 
   height: auto;
   cursor: pointer;
   filter: drop-shadow(5px 5px 5px var(--pBlack));

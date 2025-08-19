@@ -5,15 +5,63 @@
     padding: 1% 5% 1%;
 }
 
-.cardContent {
-    display: flex; 
+.arcaneName, .goddessName {
+    color: var(--pBlue);
 }
 
-.cardImageContainer,
-.cardGoddessContainer {
+.arcaneNameTitle {
+    font-size: 1.15em;
+    border-bottom: 2px solid var(--aGreen);
+    display: inline-block; 
+}
+
+.arcaneDescription, .goddessDescription {
+    color: var(--pBlack);
     text-align: left;
-    width: 50%;
-    padding: 0 1%;
+}
+
+.cardFullWidth {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    background-color: #fff;
+    border: 2px double var(--aLightYellow);
+    padding: 2rem 1rem;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+
+.nextButton, .previousButton {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--pBlue);
+}
+
+.nextButton {
+    right: 1rem;
+}
+
+.previousButton {
+    left: 1rem;
+}
+
+.loadingText {
+    text-align: center;
+    color: var(--pBlack);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.pageTitle {
+    text-align: center;
+    color: var(--pBlue);
+    margin-bottom: 2rem;
 }
 
 .returnContainer {
@@ -22,7 +70,7 @@
     text-align: center;
 }
 
-.button {
+.buttonBack {
     width: 50%;
     padding: 1rem;
 }
