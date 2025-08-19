@@ -1,25 +1,26 @@
-/* Importar fuentes desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Murecho:wght@100;200;300;400;500;600;700;800;900&family=Aboreto&display=swap');
 
 /* RESET CSS */
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
 }
 
-html, body {
-    overflow: auto;
+html,
+body {
+  overflow: auto;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
   width: 100vw;
   box-sizing: border-box;
@@ -29,26 +30,26 @@ html, body {
 /* COLOR PALETTE */
 :root {
   /* Primary colors */
-    --pRed: #b56576;
-    --pYellow: #eaac8b;
-    --pBlue: #355070;
-    --pBlack: #1c1c1c;
-    /* Secondary colors */
-    --sPink: #df9dd6;
-    --sPurple: #8d67a6;
-    --sLilac: #6d597a;
-    --sBlue: #8ca5cc;
-    /* Accent and Arcana colors */
-    --aRed: #d63c2f;
-    --aGreen: #df9dd6;
-    --aSalmon: #d64b3e;
-    --aLighGreen: #b7b785;
-    --aLightBlue: #a1c4ca;
-    --aLightYellow: #eccf74;
+  --pRed: #b56576;
+  --pYellow: #eaac8b;
+  --pBlue: #355070;
+  --pBlack: #1c1c1c;
+  /* Secondary colors */
+  --sPink: #df9dd6;
+  --sPurple: #8d67a6;
+  --sLilac: #6d597a;
+  --sBlue: #8ca5cc;
+  /* Accent and Arcana colors */
+  --aRed: #d63c2f;
+  --aGreen: #df9dd6;
+  --aSalmon: #d64b3e;
+  --aLighGreen: #b7b785;
+  --aLightBlue: #a1c4ca;
+  --aLightYellow: #eccf74;
 
   font-family: Murecho, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(255, 255, 255, 1);
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -66,7 +67,7 @@ html, body {
 @font-face {
   font-family: "Mullingar";
   src: url("./assets/fonts/Mullingar-lgKPw.otf") format("opentype"),
-       url("./assets/fonts/Mullingar-nRgnO.ttf") format("truetype");
+    url("./assets/fonts/Mullingar-nRgnO.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -93,7 +94,10 @@ h1 {
   cursor: default;
 }
 
-.pageTitle, .pageIntro {
+.pageTitle {
+  margin: 2% 5% 0%;
+}
+.pageIntro {
   margin: 1% 5%;
 }
 
@@ -109,4 +113,12 @@ h3 {
 
 p {
   font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+  .pageTitle,
+  .pageIntro {
+    margin: 5% 5%;
+    text-align: center;
+  }
 }
