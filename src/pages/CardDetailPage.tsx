@@ -4,6 +4,8 @@ import { getCardById } from "../services/tarotService";
 import { TarotCard } from "../types/tarot";
 import styles from "./CardDetailPage.module.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import StyledButtonComponent from "../components/StyledButton";
+
 
 export default function CardDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -87,12 +89,9 @@ export default function CardDetailPage() {
         )}
 
         <div className={styles.returnContainer}>
-          <button
-            className={styles.buttonBack}
-            onClick={() => navigate("/cartas")}
-          >
-            Regresar a las cartas
-          </button>
+          <StyledButtonComponent onClick={() => navigate("/cartas")}>
+        Regresar a las cartas
+      </StyledButtonComponent>
         </div>
       </div>
 

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllCards } from "../services/tarotService";
 import { TarotCard } from "../types/tarot";
 import styles from "./ReadingPage.module.css";
+import StyledButtonComponent from "../components/StyledButton";
 
 export default function ReadingPage() {
     const [cards, setCards] = useState<TarotCard[]>([]);
@@ -18,7 +19,7 @@ export default function ReadingPage() {
         if (selectedCards.length >= 3) return;
         if (selectedCards.find(c => c.card.id === card.id)) return;
 
-        const position = selectedCards.length; // 0=Pasado, 1=Presente, 2=Futuro
+        const position = selectedCards.length;
         setSelectedCards(prev => [...prev, { card, position }]);
     };
 
@@ -40,6 +41,15 @@ export default function ReadingPage() {
         return "";
     };
 
+    const getTitleClass = (index: number) => {
+        const selected = selectedCards[index];
+        if (!selected) return "";
+        if (selected.position === 0) return styles.titlePast;
+        if (selected.position === 1) return styles.titlePresent;
+        if (selected.position === 2) return styles.titleFuture;
+        return "";
+    };
+
     return (
         <div className="mainContainer">
             <h1 className="pageTitle">Lectura de Tarot</h1>
@@ -48,12 +58,8 @@ export default function ReadingPage() {
             <div className={styles.positionsContainer}>
                 {positions.map((pos, index) => (
                     <div key={pos} className={styles.position}>
-                        <h2>{pos}</h2>
-                        {selectedCards[index] ? (
-                            <p>Carta seleccionada</p>
-                        ) : (
-                            <p>Selecciona una carta</p>
-                        )}
+                        <h2 className={getTitleClass(index)}>{pos}</h2>
+                        {selectedCards[index] ? <p>Carta seleccionada</p> : <p>Selecciona una carta</p>}
                     </div>
                 ))}
             </div>
@@ -74,35 +80,51 @@ export default function ReadingPage() {
             {/* Botones */}
             <div className={styles.buttonsContainer}>
                 {selectedCards.length > 0 && (
-                    <button className={styles.resetButton} onClick={handleReset}>
-                        Reiniciar lectura
-                    </button>
+                    //   <button className={styles.resetButton} onClick={handleReset}>
+                    //     Reiniciar lectura
+                    //   </button>
+                    <StyledButtonComponent onClick={handleReset}>
+                        Reiniciar
+                    </StyledButtonComponent>
                 )}
                 {selectedCards.length === 3 && (
-                    <button className={styles.readButton} onClick={handleReading}>
+                    //   <button className={styles.readButton} onClick={handleReading}>
+                    //     Realizar lectura
+                    //   </button>
+                    <StyledButtonComponent onClick={handleReading}>
                         Realizar lectura
-                    </button>
+                    </StyledButtonComponent>
                 )}
+
+
             </div>
 
             {/* Modal */}
             {showModal && (
                 <div className={styles.modalOverlay}>
                     <div className={styles.modal}>
-                        <h2>Tu lectura de Tarot</h2>
+                        <h2 className={styles.modalTitle}>Tu lectura de Tarot</h2>
                         {positions.map((pos, index) => (
                             <div key={pos} className={styles.readingCard}>
-                                <h3>{pos}: {selectedCards[index].card.arcaneName}</h3>
+                                <h2 className={getTitleClass(index)}>
+                                    {pos}: {selectedCards[index].card.arcaneName}
+                                </h2>
                                 <img
                                     src={selectedCards[index].card.arcaneImage.imageSrc}
                                     alt={selectedCards[index].card.arcaneName}
                                 />
-                                <p>{selectedCards[index].card.arcaneDescription}</p>
-                                <h4>Diosa: {selectedCards[index].card.goddessName}</h4>
-                                <p>{selectedCards[index].card.goddessDescription}</p>
+                                <p className={styles.arcaneDescription}>{selectedCards[index].card.arcaneDescription}</p>
+                                <h2 className={getTitleClass(index)}>
+                                    Diosa asociada: {selectedCards[index].card.goddessName}
+                                </h2>
+                                <p className={styles.goddessDescription}>{selectedCards[index].card.goddessDescription}</p>
                             </div>
                         ))}
-                        <button onClick={() => setShowModal(false)}>Cerrar</button>
+                        <div className={styles.returnContainer}>
+                        <StyledButtonComponent onClick={handleReset} variant="secondary">
+                            Realizar otra lectura
+                        </StyledButtonComponent>
+                        </div>
                     </div>
                 </div>
             )}
