@@ -12,7 +12,17 @@ export default function ReadingPage() {
     const positions = ["Pasado", "Presente", "Futuro"];
 
     useEffect(() => {
-        getAllCards().then(setCards).catch(console.error);
+        getAllCards()
+            .then(fetchedCards => {
+                // Barajar 
+                const shuffled = [...fetchedCards];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                setCards(shuffled);
+            })
+            .catch(console.error);
     }, []);
 
     const handleSelectCard = (card: TarotCard) => {
@@ -26,8 +36,16 @@ export default function ReadingPage() {
     const handleReset = () => {
         setSelectedCards([]);
         setShowModal(false);
+        // Reordenar las cartas al reiniciar
+        setCards(prev => {
+            const shuffled = [...prev];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        });
     };
-
     const handleReading = () => {
         setShowModal(true);
     };
@@ -40,7 +58,6 @@ export default function ReadingPage() {
         if (selected.position === 2) return styles.borderFuture;
         return "";
     };
-
     const getTitleClass = (index: number) => {
         const selected = selectedCards[index];
         if (!selected) return "";
@@ -49,12 +66,10 @@ export default function ReadingPage() {
         if (selected.position === 2) return styles.titleFuture;
         return "";
     };
-
     return (
         <div className="mainContainer">
             <h1 className="pageTitle">Lectura de Tarot</h1>
-
-            {/* Posiciones Pasado - Presente - Futuro */}
+            {/* Posiciones */}
             <div className={styles.positionsContainer}>
                 {positions.map((pos, index) => (
                     <div key={pos} className={styles.position}>
@@ -63,7 +78,6 @@ export default function ReadingPage() {
                     </div>
                 ))}
             </div>
-
             {/* Cartas disponibles */}
             <div className={styles.cardsContainer}>
                 {cards.map(card => (
@@ -76,29 +90,19 @@ export default function ReadingPage() {
                     />
                 ))}
             </div>
-
             {/* Botones */}
             <div className={styles.buttonsContainer}>
                 {selectedCards.length > 0 && (
-                    //   <button className={styles.resetButton} onClick={handleReset}>
-                    //     Reiniciar lectura
-                    //   </button>
                     <StyledButtonComponent onClick={handleReset}>
                         Reiniciar
                     </StyledButtonComponent>
                 )}
                 {selectedCards.length === 3 && (
-                    //   <button className={styles.readButton} onClick={handleReading}>
-                    //     Realizar lectura
-                    //   </button>
                     <StyledButtonComponent onClick={handleReading}>
                         Realizar lectura
                     </StyledButtonComponent>
                 )}
-
-
             </div>
-
             {/* Modal */}
             {showModal && (
                 <div className={styles.modalOverlay}>
@@ -121,9 +125,9 @@ export default function ReadingPage() {
                             </div>
                         ))}
                         <div className={styles.returnContainer}>
-                        <StyledButtonComponent onClick={handleReset} variant="secondary">
-                            Realizar otra lectura
-                        </StyledButtonComponent>
+                            <StyledButtonComponent onClick={handleReset} variant="secondary">
+                                Realizar otra lectura
+                            </StyledButtonComponent>
                         </div>
                     </div>
                 </div>
