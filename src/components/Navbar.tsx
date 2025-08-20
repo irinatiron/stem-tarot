@@ -50,11 +50,11 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink 
-            to="/contacto" 
+            to="/info" 
             onClick={() => setIsOpen(false)}
             className={({ isActive }) => isActive ? styles.activeLink : ""}
           >
-            Contacto
+            Acerca de
           </NavLink>
         </li>
       </ul>

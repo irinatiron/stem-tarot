@@ -1,0 +1,41 @@
+.section {
+    margin: 1% 5% 0%;
+}
+
+.aboutList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.aboutList li {
+  position: relative;
+  padding-left: 2em; 
+  margin-bottom: 0.5em;
+}
+
+.aboutList li::before {
+  display: inline-block;   
+  margin-right: 0.5rem;  
+}
+
+
+.aboutList li:nth-child(1)::before {
+  content: "✨"; 
+}
+
+.aboutList li:nth-child(2)::before {
+  content: "🔮"; 
+}
+
+.aboutList li:nth-child(3)::before {
+  content: "🌙"; 
+}
+
+.aboutList li:nth-child(4)::before {
+  content: "⭐"; 
+}
+
+.aboutList li:nth-child(5)::before {
+  content: "🪄"; 
+}
+

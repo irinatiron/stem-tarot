@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       { path: "/cartas", element: <HomePage /> },
       { path: "/carta/:id", element: <CardDetailPage /> },
       { path: "/lectura", element: <ReadingPage /> },
-      { path: "/contacto", element: <AboutPage /> },
+      { path: "/info", element: <AboutPage /> },
     ],
   },
 ]);
