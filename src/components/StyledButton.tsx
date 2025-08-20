@@ -35,6 +35,12 @@ const StyledButtonComponent: React.FC<StyledButtonProps> = ({
       outline-offset: 15px;
       text-shadow: 1px 1px 2px var(--aLightBlue);
     }
+
+    @media (max-width: 768px) {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    }
+
   `;
 
   return <StyledButton onClick={onClick}>{children}</StyledButton>;

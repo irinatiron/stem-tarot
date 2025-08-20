@@ -3,6 +3,10 @@ import { getAllCards } from "../services/tarotService";
 import { TarotCard } from "../types/tarot";
 import styles from "./ReadingPage.module.css";
 import StyledButtonComponent from "../components/StyledButton";
+import { IoCheckmark } from "react-icons/io5";
+import { IoReloadSharp } from "react-icons/io5";
+
+
 
 export default function ReadingPage() {
     const [cards, setCards] = useState<TarotCard[]>([]);
@@ -69,20 +73,9 @@ export default function ReadingPage() {
                 {positions.map((pos, index) => (
                     <div key={pos} className={styles.position}>
                         <h2 className={getTitleClass(index)}>{pos}</h2>
-                        {selectedCards[index] ? <p>Carta seleccionada</p> : <p>Selecciona una carta</p>}
+                        {selectedCards[index] ? <p>Carta seleccionada <IoCheckmark />
+</p> : <p>Selecciona una carta</p>}
                     </div>
-                ))}
-            </div>
-            {/* Cartas disponibles */}
-            <div className={styles.cardsContainer}>
-                {cards.map(card => (
-                    <img
-                        key={card.id}
-                        src="/images/card-back.png"
-                        alt="Carta boca abajo"
-                        className={`${styles.cardBack} ${getBorderClass(card.id)}`}
-                        onClick={() => handleSelectCard(card)}
-                    />
                 ))}
             </div>
             {/* Botones */}
@@ -98,6 +91,19 @@ export default function ReadingPage() {
                     </StyledButtonComponent>
                 )}
             </div>
+            {/* Cartas disponibles */}
+            <div className={styles.cardsContainer}>
+                {cards.map(card => (
+                    <img
+                        key={card.id}
+                        src="/images/card-back.png"
+                        alt="Carta boca abajo"
+                        className={`${styles.cardBack} ${getBorderClass(card.id)}`}
+                        onClick={() => handleSelectCard(card)}
+                    />
+                ))}
+            </div>
+            
             {/* Modal */}
             {showModal && (
                 <div className={styles.modalOverlay}>

@@ -207,13 +207,22 @@
         padding: 1% 8%;
     }
 
-    .arcaneImage,
-    .goddessImage {
+    .arcaneImage {
         margin: 0;
     }
 
+    .goddessImage {
+        margin: 10px auto 0px;
+        border: none;
+    }
+
+    .nextButton,
+    .previousButton {
+        font-size: 1.6em;
+        gap: 0.3em;
+    }
+
     .returnContainer {
-        margin-bottom: 3rem;
         width: 100%;
         text-align: center;
     }
