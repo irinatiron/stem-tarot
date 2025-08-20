@@ -82,7 +82,7 @@ body {
 
 .mainContainer {
   max-width: 100vw;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   overflow-x: hidden;
 }
 
@@ -115,6 +115,22 @@ h3 {
 p, li {
   font-size: 1.2em;
 }
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loading {
+  animation: fadeInPage 1s ease-out;
+}
+
 
 @media (max-width: 768px) {
   .pageTitle,
