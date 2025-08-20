@@ -7,6 +7,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative; 
+}
+
+.starburstContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* centra verticalmente los starbursts */
+    gap: 5rem;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .title {
@@ -15,6 +27,8 @@
     text-align: center;
     margin-bottom: 2rem; 
 }
+
+/* Button style from https://codepen.io/electerious/pen/qPjbGm */
 
 .button {
     --offset: 10px;
@@ -91,4 +105,27 @@
 
 .button:hover .button__vertical {
     transform: scaleY(0);
+}
+
+.starburst {
+  width: 150px; 
+  background-color: var(--pYellow);
+  aspect-ratio: 1;
+  clip-path: polygon(93.3% 75%,61.5% 69.92%,50% 100%,38.5% 69.92%,6.7% 75%,27% 50%,6.7% 25%,38.5% 30.08%,50% 0%,61.5% 30.08%,93.3% 25%,73% 50%);
+}
+
+.starburst2 {
+  width: 60px;
+  height: 60px;
+  background-color: var(--pYellow);
+  aspect-ratio: 1;
+  clip-path: polygon(100% 50%,53.54% 53.54%,50% 100%,46.46% 53.54%,0% 50%,46.46% 46.46%,50% 0%,53.54% 46.46%);
+}
+
+.starburst3 {
+  width: 30px;
+  height: 30px;
+  background-color: var(--pYellow);
+  aspect-ratio: 1;
+  clip-path: polygon(100% 50%,69.8% 69.8%,50% 100%,30.2% 69.8%,0% 50%,30.2% 30.2%,50% 0%,69.8% 30.2%);
 }

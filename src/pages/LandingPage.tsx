@@ -13,8 +13,17 @@ export default function LandingPage() {
                     <div className={styles.button__horizontal}></div>
                     <div className={styles.button__vertical}></div>
                 </button>
-
-                {/* <button className={styles.button} onClick={() => navigate("/cartas")}>Comenzar</button> */}
+                <div className={styles.starburstContainer}>
+                <div className={styles.starburst}></div>
+                <div className={styles.starburst2}></div>
+                <div className={styles.starburst3}></div>
+                <div className={styles.starburst2}></div>
+                <div className={styles.starburst}></div>
+                <div className={styles.starburst2}></div>
+                <div className={styles.starburst3}></div>
+                <div className={styles.starburst2}></div>
+                <div className={styles.starburst}></div>
+                </div>
             </div>
         </div>
     );
