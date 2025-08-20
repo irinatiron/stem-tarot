@@ -1,0 +1,40 @@
+.header {
+  text-align: center;
+}
+
+.title {
+  font-family: "MvokyDemo", serif;
+  font-size: 3em;
+  line-height: 1.1;
+  color: var(--pYellow);
+  text-transform: uppercase;
+  cursor: default;
+  margin: 2% auto;
+  background-color: var(--BlackBG);
+  padding: 0.5rem 1rem 0rem; 
+  display: inline-block; 
+  border: 2px solid var(--pYellow);
+  box-shadow: rgba(50, 50, 93, 1) 100px 50px 100px -20px, rgba(0, 0, 0, 1) 0px 30px 60px -13px;
+}
+
+.starburst2 {
+  width: 30px;
+  height: 30px;
+  background-color: var(--pYellow);
+  clip-path: polygon(100% 50%,53.54% 53.54%,50% 100%,46.46% 53.54%,0% 50%,46.46% 46.46%,50% 0%,53.54% 46.46%);
+  display: inline-block;   
+  vertical-align: middle;  
+  margin: 0 0.5rem;        
+}
+
+@media (max-width: 768px) {
+.title {
+    font-size: 2.6em;
+    margin: 5% auto 1%;
+    box-shadow: none;;
+}
+.starburst2 {
+  width: 20px;
+  height: 20px;
+}
+}

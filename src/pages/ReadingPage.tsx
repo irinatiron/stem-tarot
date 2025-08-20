@@ -8,9 +8,7 @@ export default function ReadingPage() {
     const [cards, setCards] = useState<TarotCard[]>([]);
     const [selectedCards, setSelectedCards] = useState<{ card: TarotCard; position: number }[]>([]);
     const [showModal, setShowModal] = useState(false);
-
     const positions = ["Pasado", "Presente", "Futuro"];
-
     useEffect(() => {
         getAllCards()
             .then(fetchedCards => {
@@ -24,7 +22,6 @@ export default function ReadingPage() {
             })
             .catch(console.error);
     }, []);
-
     const handleSelectCard = (card: TarotCard) => {
         if (selectedCards.length >= 3) return;
         if (selectedCards.find(c => c.card.id === card.id)) return;
@@ -32,7 +29,6 @@ export default function ReadingPage() {
         const position = selectedCards.length;
         setSelectedCards(prev => [...prev, { card, position }]);
     };
-
     const handleReset = () => {
         setSelectedCards([]);
         setShowModal(false);
@@ -49,7 +45,6 @@ export default function ReadingPage() {
     const handleReading = () => {
         setShowModal(true);
     };
-
     const getBorderClass = (cardId: number) => {
         const selected = selectedCards.find(c => c.card.id === cardId);
         if (!selected) return "";

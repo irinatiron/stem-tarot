@@ -7,7 +7,7 @@ export default function LandingPage() {
     return (
         <div className="mainContainer">
             <div className={styles.logoContainer}>
-                <h1 className={styles.title}>TAROT STEM</h1>
+                <h1 className={styles.title}>Goddess Tarot</h1>
                 <button className={styles.button} onClick={() => navigate("/cartas")}>
                     Comenzar
                     <div className={styles.button__horizontal}></div>

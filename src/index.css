@@ -34,6 +34,7 @@ body {
   --pYellow: #eaac8b;
   --pBlue: #355070;
   --pBlack: #1c1c1c;
+  --BlackBG: #252525;
   /* Secondary colors */
   --sPink: #df9dd6;
   --sPurple: #8d67a6;
@@ -87,15 +88,15 @@ body {
 
 h1 {
   font-family: "MvokyDemo", serif;
-  font-size: 3em;
+  font-size: 2.7em;
   line-height: 1.1;
-  color: var(--pBlack);
+  color: var(--sLilac);
   text-transform: uppercase;
   cursor: default;
 }
 
 .pageTitle {
-  margin: 2% 5% 0%;
+  margin: 1% 5% 0%;
 }
 .pageIntro {
   margin: 1% 5%;
