@@ -38,7 +38,7 @@ La aplicación estará disponible en [localhost](http://localhost:5173/)
 
 
 ## 📁 Estructura del proyecto
-    ```bash
+     
     STEM-TAROT/
     ├──public/
     │   ├── favicon                  # Icono favicon
@@ -76,29 +76,29 @@ La aplicación estará disponible en [localhost](http://localhost:5173/)
 
 ## 🔗 API
     La aplicación consume la API pública de tarot STEM
-    ```bash
+    
     https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot
     
     Ejemplo de estructura de una carta:
-    ```bash
-            {
-        "id": "1",
-        "arcaneNumber": "0",
-        "arcaneName": "El Loco",
-        "arcaneDescription": "Descripción detallada del significado de la carta.",
-        "arcaneImage": {
-            "imageSrc": "URL de la imagen",
-            "author": "Autor",
-            "license": "Licencia"
-        },
-        "goddessName": "Nombre de la diosa asociada",
-        "goddessDescription": "Descripción biográfica",
-        "goddessImage": {
-            "imageSrc": "URL de la diosa",
-            "author": "Autor",
-            "licenseUrl": "URL licencia"
-        }
-        }
+    
+     {
+    "id": "1",
+    "arcaneNumber": "0",
+    "arcaneName": "El Loco",
+    "arcaneDescription": "Descripción detallada del significado de la carta.",
+    "arcaneImage": {
+      "imageSrc": "URL de la imagen de la carta",
+      "author": "Autor de la imagen",
+      "license": "Licencia de uso"
+    },
+    "goddessName": "Nombre de la diosa contemporánea asociada",
+    "goddessDescription": "Descripción biográfica o información relevante sobre la diosa contemporánea.",
+    "goddessImage": {
+      "imageSrc": "URL de la imagen de la diosa",
+      "author": "Autor de la imagen",
+      "licenseUrl": "URL de la licencia de uso"
+    }
+  }
        
 
 ## 🛠️ Tecnologías utilizadas
