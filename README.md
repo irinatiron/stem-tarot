@@ -82,23 +82,23 @@ La aplicación estará disponible en [localhost](http://localhost:5173/)
     Ejemplo de estructura de una carta:
     
      {
-    "id": "1",
-    "arcaneNumber": "0",
-    "arcaneName": "El Loco",
-    "arcaneDescription": "Descripción detallada del significado de la carta.",
-    "arcaneImage": {
-      "imageSrc": "URL de la imagen de la carta",
-      "author": "Autor de la imagen",
-      "license": "Licencia de uso"
-    },
-    "goddessName": "Nombre de la diosa contemporánea asociada",
-    "goddessDescription": "Descripción biográfica o información relevante sobre la diosa contemporánea.",
-    "goddessImage": {
-      "imageSrc": "URL de la imagen de la diosa",
-      "author": "Autor de la imagen",
-      "licenseUrl": "URL de la licencia de uso"
+     "id": "1",
+     "arcaneNumber": "0",
+     "arcaneName": "El Loco",
+     "arcaneDescription": "Descripción detallada del significado de la carta.",
+     "arcaneImage": {
+       "imageSrc": "URL de la imagen de la carta",
+       "author": "Autor de la imagen",
+       "license": "Licencia de uso"
+     },
+     "goddessName": "Nombre de la diosa contemporánea asociada",
+     "goddessDescription": "Descripción biográfica o información relevante sobre la diosa contemporánea.",
+     "goddessImage": {
+       "imageSrc": "URL de la imagen de la diosa",
+       "author": "Autor de la imagen",
+       "licenseUrl": "URL de la licencia de uso"
+     }
     }
-  }
        
 
 ## 🛠️ Tecnologías utilizadas
