@@ -5,7 +5,7 @@ import { TarotCard } from "../types/tarot";
 import styles from "./CardDetailPage.module.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import StyledButtonComponent from "../components/StyledButton";
-
+import Galaxy from "../components/GalaxyBackground";
 
 export default function CardDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -37,6 +37,7 @@ export default function CardDetailPage() {
 
   return (
     <>
+      <Galaxy />
       <h1 className="pageTitle">
         Detalle de la carta:{" "}
         <span className={styles.arcaneNameTitle}>{card.arcaneName}</span>

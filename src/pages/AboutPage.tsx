@@ -1,8 +1,10 @@
 import styles from "./AboutPage.module.css";
+import Galaxy from "../components/GalaxyBackground";
 
 export default function AboutPage() {
     return (
         <div className={`mainContainer ${styles.about}`}>
+            <Galaxy />
             <h1 className="pageTitle">Sobre el proyecto</h1>
 
             <section className={styles.section}>
