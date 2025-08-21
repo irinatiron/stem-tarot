@@ -1,0 +1,95 @@
+.lines {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh; 
+  width: 100vw;  
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none; 
+  z-index: 1; 
+}
+
+.line {
+  position: relative;
+  width: 1px;
+  height: 100%;
+  /* background: #1c1c1c;   */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+  animation: drop 7s 0s infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.line:nth-child(1)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--sPink) 75%, var(--sPink) 100%);
+  animation-delay: 0.1s;
+}
+
+.line:nth-child(2)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--sPurple) 75%, var(--sPurple) 100%);
+  animation-delay: 1s;
+}
+
+.line:nth-child(3)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--sLilac) 75%, var(--sLilac) 100%);
+  animation-delay: 1.5s;
+}
+
+.line:nth-child(4)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--sBlue) 75%, var(--sBlue) 100%);
+  animation-delay: 2s;
+}
+
+.line:nth-child(5)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--aRed) 75%, var(--aRed) 100%);
+  animation-delay: 2.5s;
+}
+
+.line:nth-child(6)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--aGreen) 75%, var(--aGreen) 100%);
+  animation-delay: 3s;
+}
+
+.line:nth-child(7)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--aSalmon) 75%, var(--aSalmon) 100%);
+  animation-delay: 3.5s;
+}
+
+.line:nth-child(8)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--aLighGreen) 75%, var(--aLighGreen) 100%);
+  animation-delay: 4s;
+}
+
+.line:nth-child(9)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--aLightBlue) 75%, var(--aLightBlue) 100%);
+  animation-delay: 4.5s;
+}
+
+.line:nth-child(10)::after {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, var(--aLightYellow) 75%, var(--aLightYellow) 100%);
+  animation-delay: 5s;
+}
+
+
+@keyframes drop {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top: 110%;
+  }
+}

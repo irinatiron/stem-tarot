@@ -12,6 +12,7 @@ const StyledButtonComponent: React.FC<StyledButtonProps> = ({
   variant = "default",
 }) => {
   const StyledButton = styled.button`
+  // Button style from https://codepen.io/davidicus/pen/emgQKJ
     border: 0 solid;
     box-shadow: inset 0 0 20px ${variant === "secondary" ? "rgba(28, 28, 28, 0)" : "rgba(255, 255, 255, 0)"};
     outline: 1px solid ${variant === "secondary" ? "rgba(28, 28, 28, 0.5)" : "rgba(255, 255, 255, 0.5)"};

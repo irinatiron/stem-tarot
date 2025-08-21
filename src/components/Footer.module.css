@@ -6,6 +6,7 @@
   margin-top: 2rem;
   border-top: 2px solid var(--pYellow);
   font-family: "Aboreto", sans-serif;
+  z-index: 10;
 }
 
 .text {

@@ -118,8 +118,17 @@
 }
 
 @media (max-width: 768px) {
+  .positionsContainer {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  .position {
+    width: 100%;
+  }
+
   .buttonsContainer {
     gap: 1rem;
-    margin: 2rem auto 0.5rem;
+    margin: 3rem auto 3rem;
   }
 }

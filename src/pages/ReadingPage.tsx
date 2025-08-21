@@ -4,9 +4,6 @@ import { TarotCard } from "../types/tarot";
 import styles from "./ReadingPage.module.css";
 import StyledButtonComponent from "../components/StyledButton";
 import { IoCheckmark } from "react-icons/io5";
-import { IoReloadSharp } from "react-icons/io5";
-
-
 
 export default function ReadingPage() {
     const [cards, setCards] = useState<TarotCard[]>([]);
@@ -68,6 +65,7 @@ export default function ReadingPage() {
     return (
         <div className="mainContainer">
             <h1 className="pageTitle">Lectura de Tarot</h1>
+            <p className="pageIntro">Elige 3 cartas de los Arcanos Mayores (22 cartas en total) para realizar la lectura.</p>
             {/* Posiciones */}
             <div className={styles.positionsContainer}>
                 {positions.map((pos, index) => (
@@ -103,7 +101,19 @@ export default function ReadingPage() {
                     />
                 ))}
             </div>
-            
+            {/* Botones */}
+            <div className={styles.buttonsContainer}>
+                {selectedCards.length > 0 && (
+                    <StyledButtonComponent onClick={handleReset}>
+                        Reiniciar
+                    </StyledButtonComponent>
+                )}
+                {selectedCards.length === 3 && (
+                    <StyledButtonComponent onClick={handleReading}>
+                        Realizar lectura
+                    </StyledButtonComponent>
+                )}
+            </div>
             {/* Modal */}
             {showModal && (
                 <div className={styles.modalOverlay}>
