@@ -73,13 +73,12 @@ La aplicación estará disponible en [localhost](http://localhost:5173/)
         │   └── tarot.ts             # Tipado
         ├── index.css                # Estilos globales
         └── main.jsx                 # Punto de entrada
-    ```
 
 ## 🔗 API
     La aplicación consume la API pública de tarot STEM
     ```bash
     https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot
-    ```
+    
     Ejemplo de estructura de una carta:
     ```bash
             {
@@ -100,7 +99,7 @@ La aplicación estará disponible en [localhost](http://localhost:5173/)
             "licenseUrl": "URL licencia"
         }
         }
-        ```
+       
 
 ## 🛠️ Tecnologías utilizadas
 - **React**: Framework principal 
