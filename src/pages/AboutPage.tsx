@@ -2,11 +2,13 @@ import styles from "./AboutPage.module.css";
 import Galaxy from "../components/GalaxyBackground";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 export default function AboutPage() {
     return (
         <div className={`mainContainer ${styles.about}`}>
             <Galaxy />
+            <ScrollToTopButton />
             <h1 className="pageTitle">Sobre el proyecto</h1>
 
             <div className={styles.gridContainer}>

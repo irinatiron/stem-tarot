@@ -8,6 +8,7 @@ import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IoIosCloseCircle } from "react-icons/io";
 import Galaxy from "../components/GalaxyBackground";
 import { motion, easeOut } from "framer-motion";
+import ScrollToTopButton from "../components/ScrollToTopButton";
 
 export default function ReadingPage() {
   const [cards, setCards] = useState<TarotCard[]>([]);
@@ -19,7 +20,6 @@ export default function ReadingPage() {
   const [modalTitle, setModalTitle] = useState("");
 
   const positions = ["Pasado", "Presente", "Futuro"];
-
   // Bloquear scroll del body cuando el modal está abierto
   useEffect(() => {
     if (showModal) {
@@ -114,6 +114,7 @@ export default function ReadingPage() {
   return (
     <div className="mainContainer">
       <Galaxy />
+      <ScrollToTopButton />
       <h1 className="pageTitle">Lectura de Tarot</h1>
       <p className="pageIntro">
         Elige 3 cartas de los Arcanos Mayores (22 cartas en total) para realizar la lectura.

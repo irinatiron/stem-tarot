@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { motion, easeOut } from "framer-motion";
 import styles from "./HomePage.module.css";
 import Galaxy from "../components/GalaxyBackground";
+import ScrollToTopButton from "../components/ScrollToTopButton";  
 
 export default function HomePage() {
   const [cards, setCards] = useState<TarotCard[]>([]);
@@ -37,6 +38,7 @@ export default function HomePage() {
   return (
     <div className="mainContainer">
       <Galaxy />
+      <ScrollToTopButton />
       <h1 className="pageTitle">Cartas del Tarot</h1>
       <p className="pageIntro">
         Explora las 22 cartas de los Arcanos Mayores del Tarot. Cada una encierra símbolos y arquetipos que revelan aspectos esenciales de la experiencia humana. Haz clic en una carta para descubrir su interpretación y la diosa contemporánea asociada.
