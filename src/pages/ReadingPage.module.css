@@ -79,6 +79,33 @@
   text-align: center;
 }
 
+.readingCardDivider {
+  display: flex;
+}
+
+.cardSection {
+  width: 50%;
+  padding: 20px;
+}
+
+.carouselControls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.carouselButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--aSalmon);
+  font-size: 2em;
+  font-family: 'Aboreto', serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
 .readingCard img {
   max-width: 150px;
   display: block;
@@ -118,6 +145,13 @@
 }
 
 @media (max-width: 768px) {
+  .modal {
+    max-width: 100vw;
+    width: 100%;
+    border-radius: 0px;
+    max-height: 90vh;
+  }
+
   .positionsContainer {
     display: block;
     margin-bottom: 2rem;
@@ -127,8 +161,22 @@
     width: 100%;
   }
 
+  .readingCardDivider {
+    display: block;
+  }
+
+  .cardSection {
+    width: 100%;
+    padding: 5px 0px;
+  }
+
   .buttonsContainer {
     gap: 1rem;
     margin: 3rem auto 3rem;
+  }
+
+  .carouselButton {
+    font-size: 1.6em;
+    gap: 0.3em;
   }
 }
