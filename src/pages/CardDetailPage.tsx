@@ -6,6 +6,7 @@ import styles from "./CardDetailPage.module.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import StyledButtonComponent from "../components/StyledButton";
 import Galaxy from "../components/GalaxyBackground";
+import { IoIosCloseCircle } from "react-icons/io";
 
 export default function CardDetailPage() {
   const { id } = useParams<{ id: string }>();
@@ -103,11 +104,7 @@ export default function CardDetailPage() {
             className={styles.modalContent}
             onClick={(e) => e.stopPropagation()}
           >
-            <button className={styles.modalClose} onClick={closeModal}>
-              <svg viewBox="0 0 24 24" className={styles.closeIcon}>
-                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
-              </svg>
-            </button>
+            <button className={styles.modalClose} onClick={closeModal}><IoIosCloseCircle /></button>
             <img
               src={modalImage}
               alt={modalTitle}
