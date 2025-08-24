@@ -20,6 +20,21 @@ export default function ReadingPage() {
 
   const positions = ["Pasado", "Presente", "Futuro"];
 
+  // Bloquear scroll del body cuando el modal está abierto
+  useEffect(() => {
+    if (showModal) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = "100%";
+      return () => {
+        document.body.style.position = "";
+        document.body.style.top = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [showModal]);
+
   const shuffleArray = <T,>(array: T[]): T[] => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -120,26 +135,17 @@ export default function ReadingPage() {
         {selectedCards.length === 3 && <StyledButtonComponent onClick={handleReading}>Realizar lectura</StyledButtonComponent>}
       </div>
 
-      {/* Cartas disponibles como tirada */}
+      {/* Cartas disponibles */}
       <div className={styles.cardsContainer}>
         {cards.map((card, index) => {
           const transform = cardTransforms[index];
           return (
             <motion.div
-              key={index} 
+              key={index}
               initial={{ opacity: 0, y: 100 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                ease: easeOut,
-                delay: index * 0.1, 
-              }}
-              style={{
-                display: "inline-block",
-                rotate: transform?.rotate || 0,
-                x: transform?.x || 0,
-                y: transform?.y || 0,
-              }}
+              transition={{ duration: 0.6, ease: easeOut, delay: index * 0.1 }}
+              style={{ display: "inline-block", rotate: transform?.rotate || 0, x: transform?.x || 0, y: transform?.y || 0 }}
               className={getBorderClass(card.id)}
             >
               <img
@@ -151,12 +157,6 @@ export default function ReadingPage() {
             </motion.div>
           );
         })}
-      </div>
-
-      {/* Botones al final */}
-      <div className={styles.buttonsContainer}>
-        {selectedCards.length > 0 && <StyledButtonComponent onClick={handleReset}>Reiniciar</StyledButtonComponent>}
-        {selectedCards.length === 3 && <StyledButtonComponent onClick={handleReading}>Realizar lectura</StyledButtonComponent>}
       </div>
 
       {/* Modal lectura */}
@@ -215,10 +215,10 @@ export default function ReadingPage() {
         </div>
       )}
 
-      {/* Modal para imagen expandida */}
+      {/* Modal imagen expandida */}
       {modalImage && (
-        <div className={styles.imageModal} onClick={closeModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.imageModal}>
+          <div className={styles.modalContent}>
             <button className={styles.modalClose} onClick={closeModal}><IoIosCloseCircle /></button>
             <img src={modalImage} alt={modalTitle} className={styles.modalImage} />
             <div className={styles.modalTitle}>{modalTitle}</div>
