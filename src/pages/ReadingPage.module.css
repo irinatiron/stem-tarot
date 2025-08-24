@@ -17,29 +17,6 @@
   position: relative;
 }
 
-/* .cardsContainer img.cardBack:nth-child(1) { transform: rotate(-6deg) translate(-4px, 3px); }
-.cardsContainer img.cardBack:nth-child(2) { transform: rotate(5deg) translate(3px, -2px); }
-.cardsContainer img.cardBack:nth-child(3) { transform: rotate(-3deg) translate(2px, 5px); }
-.cardsContainer img.cardBack:nth-child(4) { transform: rotate(7deg) translate(-5px, -3px); }
-.cardsContainer img.cardBack:nth-child(5) { transform: rotate(-4deg) translate(4px, -4px); }
-.cardsContainer img.cardBack:nth-child(6) { transform: rotate(3deg) translate(-3px, 2px); }
-.cardsContainer img.cardBack:nth-child(7) { transform: rotate(-5deg) translate(2px, -2px); }
-.cardsContainer img.cardBack:nth-child(8) { transform: rotate(6deg) translate(-2px, 3px); }
-.cardsContainer img.cardBack:nth-child(9) { transform: rotate(-2deg) translate(3px, -3px); }
-.cardsContainer img.cardBack:nth-child(10) { transform: rotate(4deg) translate(-4px, 2px); }
-.cardsContainer img.cardBack:nth-child(11) { transform: rotate(-7deg) translate(5px, -1px); }
-.cardsContainer img.cardBack:nth-child(12) { transform: rotate(2deg) translate(-3px, 4px); }
-.cardsContainer img.cardBack:nth-child(13) { transform: rotate(-1deg) translate(1px, -5px); }
-.cardsContainer img.cardBack:nth-child(14) { transform: rotate(5deg) translate(-2px, 3px); }
-.cardsContainer img.cardBack:nth-child(15) { transform: rotate(-3deg) translate(4px, -3px); }
-.cardsContainer img.cardBack:nth-child(16) { transform: rotate(6deg) translate(-5px, 2px); }
-.cardsContainer img.cardBack:nth-child(17) { transform: rotate(-4deg) translate(3px, -4px); }
-.cardsContainer img.cardBack:nth-child(18) { transform: rotate(3deg) translate(-2px, 5px); }
-.cardsContainer img.cardBack:nth-child(19) { transform: rotate(-5deg) translate(1px, -3px); }
-.cardsContainer img.cardBack:nth-child(20) { transform: rotate(7deg) translate(-4px, 3px); }
-.cardsContainer img.cardBack:nth-child(21) { transform: rotate(-2deg) translate(2px, -2px); }
-.cardsContainer img.cardBack:nth-child(22) { transform: rotate(4deg) translate(-3px, 4px); } */
-
 .cardsContainer img.cardBack:hover {
   transform: scale(1.2) rotate(0deg) !important;
   z-index: 2;
@@ -88,8 +65,8 @@
 }
 
 .modal {
-  background: white;
-  color: black;
+  background: rgba(255, 255, 255, 1);
+  color: var(--pBlack);
   padding: 20px;
   /* max-width: 800px; */
   width: 90%;
@@ -106,7 +83,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,7 +129,8 @@
 
 }
 
-.arcaneDescription .arcaneImage, .goddessDescription .goddessImage {
+.arcaneDescription .arcaneImage,
+.goddessDescription .goddessImage {
   margin-right: 25px;
 }
 
@@ -169,7 +147,7 @@
 
 .arcaneImage:hover,
 .goddessImage:hover {
-    cursor: zoom-in;
+  cursor: zoom-in;
 }
 
 .carouselControls {
@@ -228,62 +206,61 @@
   color: var(--aLightBlue);
 }
 
-
 .imageModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
 }
 
 .modalContent {
-    position: relative;
-    background: #fff;
-    padding: 2.7rem 1rem 1rem;
-    border-radius: 10px;
-    max-width: 90vw;
-    max-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  position: relative;
+  background: #fff;
+  padding: 2.7rem 1rem 1rem;
+  border-radius: 10px;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .modalImage {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 8px;
-    object-fit: contain;
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .modalTitle {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-    text-align: center;
-    color: var(--pBlue);
-    font-family: "Mullingar", serif;
-    font-size: 2.5em;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--pBlue);
+  font-family: "Mullingar", serif;
+  font-size: 2.5em;
 }
 
 .modalClose {
-    position: absolute;
-    top: 0.1rem;
-    right: 0.3rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 2.2rem;
-    transition: color 1s;
+  position: absolute;
+  top: 0.1rem;
+  right: 0.3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2.2rem;
+  transition: color 1s;
 }
 
 .modalClose:hover {
-    color: var(--aRed);
-} 
+  color: var(--aRed);
+}
 
 @media (max-width: 768px) {
   .modal {
@@ -291,6 +268,11 @@
     width: 100%;
     border-radius: 0px;
     max-height: 90vh;
+    padding-bottom: 40px;
+  }
+
+  .modalTitle {
+    font-size: 2rem;
   }
 
   .positionsContainer {
@@ -319,5 +301,6 @@
   .carouselButton {
     font-size: 1.6em;
     gap: 0.3em;
+    font-size: 1.5em;
   }
 }
