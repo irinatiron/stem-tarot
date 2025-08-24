@@ -160,6 +160,12 @@ export default function ReadingPage() {
         })}
       </div>
 
+      {/* Mismos botones también al final */}
+      <div className={styles.buttonsContainer}>
+        {selectedCards.length > 0 && <StyledButtonComponent onClick={handleReset}>Reiniciar</StyledButtonComponent>}
+        {selectedCards.length === 3 && <StyledButtonComponent onClick={handleReading}>Realizar lectura</StyledButtonComponent>}
+      </div>
+
       {/* Modal lectura */}
       {showModal && currentCard && (
         <div className={styles.modalOverlay}>
