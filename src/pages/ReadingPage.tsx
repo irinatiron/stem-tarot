@@ -134,6 +134,10 @@ export default function ReadingPage() {
                                 <h2 className={getTitleClass(index)}>
                                     Diosa asociada: {selectedCards[index].card.goddessName}
                                 </h2>
+                                <img
+                                    src={selectedCards[index].card.goddessImage.imageSrc}
+                                    alt={selectedCards[index].card.goddessName}
+                                />
                                 <p className={styles.goddessDescription}>{selectedCards[index].card.goddessDescription}</p>
                             </div>
                         ))}
