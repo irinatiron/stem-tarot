@@ -165,7 +165,7 @@
 @media (max-width: 768px) {
     .cardDetailContainer {
         margin: 0;
-        padding: 0;
+        padding: 0 0 20px;
     }
 
     .cardFullWidth {
