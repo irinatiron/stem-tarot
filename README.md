@@ -29,7 +29,7 @@ Permite explorar cartas, obtener información detallada y realizar lecturas guia
 
 - **Diseño responsive**: accesible para todos los dispositivos. 
 
-<img src="./src/assets/screenshots/ResponsiveNav.png" alt="Menú navegación en versión móvil" style="max-width: 350px; width: 100%; margin-bottom: 12px;" />
+<img src="./src/assets/screenshots/ResponsiveNav.png" alt="Menú navegación en versión móvil" style="max-width: 350px; width: 35%; margin-bottom: 12px;" />
  
 
 ### Nivel 2: Lectura de cartas (Pasado, Presente, Futuro)  
