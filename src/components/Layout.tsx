@@ -5,13 +5,13 @@ import Footer from "./Footer";
 
 export default function Layout() {
   return (
-    <>
+    <div className="layoutGrid">
       <Navbar />
       <Header />
       <main>
-        <Outlet />  
+        <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

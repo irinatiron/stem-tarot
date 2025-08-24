@@ -41,7 +41,7 @@
 .cardsContainer img.cardBack:nth-child(22) { transform: rotate(4deg) translate(-3px, 4px); }
 
 .cardsContainer img.cardBack:hover {
-  transform: scale(1.05) rotate(0deg) !important;
+  transform: scale(1.2) rotate(0deg) !important;
   z-index: 2;
   transition: transform 0.2s ease-in-out;
 }
