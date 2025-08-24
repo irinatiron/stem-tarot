@@ -5,6 +5,7 @@ import styles from "./ReadingPage.module.css";
 import StyledButtonComponent from "../components/StyledButton";
 import { IoCheckmark } from "react-icons/io5";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { IoIosCloseCircle } from "react-icons/io";
 import Galaxy from "../components/GalaxyBackground";
 
 export default function ReadingPage() {
@@ -12,6 +13,8 @@ export default function ReadingPage() {
     const [selectedCards, setSelectedCards] = useState<{ card: TarotCard; position: number }[]>([]);
     const [showModal, setShowModal] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [modalImage, setModalImage] = useState<string | null>(null);
+    const [modalTitle, setModalTitle] = useState("");
 
     const positions = ["Pasado", "Presente", "Futuro"];
 
@@ -85,6 +88,19 @@ export default function ReadingPage() {
     const prevIndex = (currentIndex - 1 + 3) % 3;
     const nextIndex = (currentIndex + 1) % 3;
 
+
+    // Abrir modal
+    const openModal = (imageSrc: string, title: string) => {
+        setModalImage(imageSrc);
+        setModalTitle(title);
+    };
+
+    // Cerrar modal
+    const closeModal = () => {
+        setModalImage(null);
+        setModalTitle("");
+    };
+
     return (
         <div className="mainContainer">
             <Galaxy />
@@ -105,7 +121,7 @@ export default function ReadingPage() {
                 ))}
             </div>
 
-            {/* Botones */}
+            {/* Botones al comienzo */}
             <div className={styles.buttonsContainer}>
                 {selectedCards.length > 0 && (
                     <StyledButtonComponent onClick={handleReset}>
@@ -132,36 +148,55 @@ export default function ReadingPage() {
                 ))}
             </div>
 
+            {/* Botones al final */}
+            <div className={styles.buttonsContainer}>
+                {selectedCards.length > 0 && (
+                    <StyledButtonComponent onClick={handleReset}>
+                        Reiniciar
+                    </StyledButtonComponent>
+                )}
+                {selectedCards.length === 3 && (
+                    <StyledButtonComponent onClick={handleReading}>
+                        Realizar lectura
+                    </StyledButtonComponent>
+                )}
+            </div>
+
             {/* Modal */}
             {showModal && (
                 <div className={styles.modalOverlay}>
                     <div className={styles.modal}>
-                        <h2 className={styles.modalTitle}>Tu lectura de Tarot</h2>
-
+                        <h2 className={styles.modalTitle}><span className={styles.starburst2}></span>Tu lectura de Tarot<span className={styles.starburst2}></span></h2>
                         {currentCard && (
-                            
                             <div className={styles.readingCard}>
                                 <h2 className={getTitleClass(currentIndex)}>
                                     {positions[currentIndex]}</h2>
-                                    <div className={styles.readingCardDivider}>
-                                <div className={styles.cardSection}>
-                                <h2 className={getTitleClass(currentIndex)}>{currentCard.card.arcaneName}
-                                </h2>
-                                <img
-                                    src={currentCard.card.arcaneImage.imageSrc}
-                                    alt={currentCard.card.arcaneName}
-                                />
-                                <p className={styles.arcaneDescription}>{currentCard.card.arcaneDescription}</p>
-                                </div><div className={styles.cardSection}>
-                                <h2 className={getTitleClass(currentIndex)}>
-                                    Diosa asociada: {currentCard.card.goddessName}
-                                </h2>
-                                <img
-                                    src={currentCard.card.goddessImage.imageSrc}
-                                    alt={currentCard.card.goddessName}
-                                />
-                                <p className={styles.goddessDescription}>{currentCard.card.goddessDescription}</p>
-                                </div>
+                                <div className={styles.readingCardDivider}>
+                                    <div className={styles.cardSection}>
+                                        <h2 className={getTitleClass(currentIndex)}>{currentCard.card.arcaneName}</h2>
+
+                                        <p className={styles.arcaneDescription}>
+                                            <img
+                                                src={currentCard.card.arcaneImage.imageSrc}
+                                                alt={currentCard.card.arcaneName}
+                                                className={`${styles.arcaneImage} ${styles.clickableImage}`}
+                                                onClick={() => openModal(currentCard.card.arcaneImage.imageSrc, currentCard.card.arcaneName)}
+                                            />
+                                            {currentCard.card.arcaneDescription}</p>
+
+                                    </div><div className={styles.cardSection}>
+                                        <h2 className={getTitleClass(currentIndex)}>Diosa asociada: {currentCard.card.goddessName}</h2>
+
+                                        <p className={styles.goddessDescription}>
+                                            <img
+                                                src={currentCard.card.goddessImage.imageSrc}
+                                                alt={currentCard.card.goddessName}
+                                                className={`${styles.goddessImage} ${styles.clickableImage}`}
+                                                onClick={() => openModal(currentCard.card.goddessImage.imageSrc, currentCard.card.goddessName)}
+                                            />
+                                            {currentCard.card.goddessDescription}</p>
+
+                                    </div>
                                 </div>
                             </div>
                         )}
@@ -169,7 +204,7 @@ export default function ReadingPage() {
                         {/* Controles del carrusel */}
                         <div className={styles.carouselControls}>
                             <button onClick={prevSlide} className={styles.carouselButton}>
-                                 <MdKeyboardArrowLeft size={50} /> {positions[prevIndex]}
+                                <MdKeyboardArrowLeft size={50} /> {positions[prevIndex]}
                             </button>
                             <button onClick={nextSlide} className={styles.carouselButton}>
                                 {positions[nextIndex]} <MdKeyboardArrowRight size={50} />
@@ -184,6 +219,27 @@ export default function ReadingPage() {
                     </div>
                 </div>
             )}
+
+            {/* Modal para mostrar imágenes expandidas */}
+            {modalImage && (
+                <div className={styles.imageModal} onClick={closeModal}>
+                    <div
+                        className={styles.modalContent}
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <button className={styles.modalClose} onClick={closeModal}><IoIosCloseCircle /></button>
+                        <img
+                            src={modalImage}
+                            alt={modalTitle}
+                            className={styles.modalImage}
+                        />
+                        <div className={styles.modalTitle}>{modalTitle}</div>
+                    </div>
+                </div>
+            )}
+
         </div>
+
+
     );
 }
