@@ -12,8 +12,38 @@
 .cardsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: center;
+  gap: 10px;
+  position: relative;
+}
+
+.cardsContainer img.cardBack:nth-child(1) { transform: rotate(-6deg) translate(-4px, 3px); }
+.cardsContainer img.cardBack:nth-child(2) { transform: rotate(5deg) translate(3px, -2px); }
+.cardsContainer img.cardBack:nth-child(3) { transform: rotate(-3deg) translate(2px, 5px); }
+.cardsContainer img.cardBack:nth-child(4) { transform: rotate(7deg) translate(-5px, -3px); }
+.cardsContainer img.cardBack:nth-child(5) { transform: rotate(-4deg) translate(4px, -4px); }
+.cardsContainer img.cardBack:nth-child(6) { transform: rotate(3deg) translate(-3px, 2px); }
+.cardsContainer img.cardBack:nth-child(7) { transform: rotate(-5deg) translate(2px, -2px); }
+.cardsContainer img.cardBack:nth-child(8) { transform: rotate(6deg) translate(-2px, 3px); }
+.cardsContainer img.cardBack:nth-child(9) { transform: rotate(-2deg) translate(3px, -3px); }
+.cardsContainer img.cardBack:nth-child(10) { transform: rotate(4deg) translate(-4px, 2px); }
+.cardsContainer img.cardBack:nth-child(11) { transform: rotate(-7deg) translate(5px, -1px); }
+.cardsContainer img.cardBack:nth-child(12) { transform: rotate(2deg) translate(-3px, 4px); }
+.cardsContainer img.cardBack:nth-child(13) { transform: rotate(-1deg) translate(1px, -5px); }
+.cardsContainer img.cardBack:nth-child(14) { transform: rotate(5deg) translate(-2px, 3px); }
+.cardsContainer img.cardBack:nth-child(15) { transform: rotate(-3deg) translate(4px, -3px); }
+.cardsContainer img.cardBack:nth-child(16) { transform: rotate(6deg) translate(-5px, 2px); }
+.cardsContainer img.cardBack:nth-child(17) { transform: rotate(-4deg) translate(3px, -4px); }
+.cardsContainer img.cardBack:nth-child(18) { transform: rotate(3deg) translate(-2px, 5px); }
+.cardsContainer img.cardBack:nth-child(19) { transform: rotate(-5deg) translate(1px, -3px); }
+.cardsContainer img.cardBack:nth-child(20) { transform: rotate(7deg) translate(-4px, 3px); }
+.cardsContainer img.cardBack:nth-child(21) { transform: rotate(-2deg) translate(2px, -2px); }
+.cardsContainer img.cardBack:nth-child(22) { transform: rotate(4deg) translate(-3px, 4px); }
+
+.cardsContainer img.cardBack:hover {
+  transform: scale(1.05) rotate(0deg) !important;
+  z-index: 2;
+  transition: transform 0.2s ease-in-out;
 }
 
 .cardBack {
