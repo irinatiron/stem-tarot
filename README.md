@@ -8,14 +8,38 @@ Permite explorar cartas, obtener información detallada y realizar lecturas guia
 ## ✨ Características  
 
 ### Nivel 1: Exploración de cartas  
+- **Página bienvenida**: presentación de la web.  
+
+<img src="./src/assets/screenshots/LandingPage.png" alt="Página de inicio en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
+
 - **Página principal**: muestra todas las cartas boca abajo.  
+
+<img src="./src/assets/screenshots/HomePage.png" alt="Página de inicio en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
 - **Detalle de carta**: vista individual con información sobre el arcano y la diosa STEM asociada.  
-- **Modal de imagen**: permite ampliar las cartas en pantalla completa.  
-- **Navegación entre cartas**: botones para moverse fácilmente entre cartas.  
+
+<img src="./src/assets/screenshots/CardDetailPage.png" alt="Página de detalle arcano en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
+<img src="./src/assets/screenshots/CardDetailPageGoddess.png" alt="Página de detalle diosa en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
+- **Modal de imagen**: permite ampliar las cartas en pantalla completa. 
+
+<img src="./src/assets/screenshots/CloseUpImage.png" alt="Ampliación de imagen" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
+- **Diseño responsive**: accesible para todos los dispositivos. 
+
+<img src="./src/assets/screenshots/ResponsiveNav.png" alt="Menú navegación en versión móvil" style="max-width: 350px; width: 100%; margin-bottom: 12px;" />
+ 
 
 ### Nivel 2: Lectura de cartas (Pasado, Presente, Futuro)  
 - **Selección guiada**: escoger exactamente 3 cartas.  
-- **Posiciones específicas**: asignación a Pasado, Presente y Futuro.  
+
+<img src="./src/assets/screenshots/ReadingPage.png" alt="Selección cartas en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
+
+- **Lectura de posiciones específicas**: asignación a Pasado, Presente y Futuro.  
+
+<img src="./src/assets/screenshots/ReadingPageResult.png" alt="Resultado lectura en versión escritorio" style="max-width: 700px; width: 100%; margin-bottom: 12px;" />
  
 
 ## 🚀 Instalación y uso  
@@ -58,7 +82,10 @@ La aplicación estará disponible en [localhost](http://localhost:5173/)
         │   ├── Navbar/              # Menú de navegación
         │   ├── Layout/              # Elementos comunes de todo el sitio web
         │   ├── StyledButton/        # Botones reutilizables 
+        │   ├── ScrollToTopButton/   # Botón para volver arriba en versión móvil        
         │   └── CursorTrail/         # Efecto visual interactivo en el cursor
+        │   └── Line/                # Efecto visual en LandingPage
+        │   └── GalaxyBackground/    # Efecto visual de fondo
         ├── pages/    
         │   ├── LandingPage.tsx      # Página introductoria         
         │   ├── HomePage.tsx         # Página principal (todas las cartas)
@@ -107,6 +134,8 @@ La aplicación estará disponible en [localhost](http://localhost:5173/)
 - **Vite**: Servidor de desarrollo rápido  
 - **TypeScript**: Tipado estático para mayor robustez y mantenibilidad  
 - **CSS3 / Módulos CSS**: Estilos, animaciones y responsive design  
+- **Framer Motion**: Animaciones de carga para las cartas
+- **React Icons**: Iconos reutilizables
 - **Fetch API**: Consumo de la API REST  
 - **JavaScript ES6+**: Funciones modernas y soporte avanzado  
 

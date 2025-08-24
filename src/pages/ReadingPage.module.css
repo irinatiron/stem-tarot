@@ -268,7 +268,7 @@
     width: 100%;
     border-radius: 0px;
     max-height: 90vh;
-    padding-bottom: 40px;
+    padding: 60px 0 60px;
   }
 
   .modalTitle {
