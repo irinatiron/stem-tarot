@@ -61,7 +61,7 @@ export default function ReadingPage() {
 
   const handleReading = () => setShowModal(true);
 
-  const getBorderClass = (cardId: number) => {
+  const getBorderClass = (cardId: string) => {
     const selected = selectedCards.find(c => c.card.id === cardId);
     if (!selected) return "";
     if (selected.position === 0) return styles.borderPast;
@@ -79,8 +79,8 @@ export default function ReadingPage() {
     return "";
   };
 
-  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % 3);
-  const prevSlide = () => setCurrentIndex((prev) => (prev - 1 + 3) % 3);
+  const nextSlide = () => setCurrentIndex(prev => (prev + 1) % 3);
+  const prevSlide = () => setCurrentIndex(prev => (prev - 1 + 3) % 3);
 
   const currentCard = selectedCards[currentIndex];
   const prevIndex = (currentIndex - 1 + 3) % 3;
@@ -132,7 +132,7 @@ export default function ReadingPage() {
               transition={{
                 duration: 0.6,
                 ease: easeOut,
-                delay: index * 0.1,
+                delay: index * 0.1, 
               }}
               style={{
                 display: "inline-block",
@@ -140,11 +140,12 @@ export default function ReadingPage() {
                 x: transform?.x || 0,
                 y: transform?.y || 0,
               }}
+              className={getBorderClass(card.id)}
             >
               <img
                 src="/images/card-back.png"
                 alt="Carta boca abajo"
-                className={`${styles.cardBack} ${getBorderClass(card.id)}`}
+                className={styles.cardBack}
                 onClick={() => handleSelectCard(card)}
               />
             </motion.div>
