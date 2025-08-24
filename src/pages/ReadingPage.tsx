@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { getAllCards } from "../services/tarotService";
-import { TarotCard } from "../types/tarot";
+import type { TarotCard } from "../types/tarot";
 import styles from "./ReadingPage.module.css";
 import StyledButtonComponent from "../components/StyledButton";
 import { IoCheckmark } from "react-icons/io5";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { IoIosCloseCircle } from "react-icons/io";
 import Galaxy from "../components/GalaxyBackground";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 
 export default function ReadingPage() {
   const [cards, setCards] = useState<TarotCard[]>([]);
@@ -19,7 +19,7 @@ export default function ReadingPage() {
   const [modalTitle, setModalTitle] = useState("");
 
   const positions = ["Pasado", "Presente", "Futuro"];
-// Barajar el orden de las cartas
+
   const shuffleArray = <T,>(array: T[]): T[] => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -34,11 +34,11 @@ export default function ReadingPage() {
       .then(fetchedCards => {
         const shuffled = shuffleArray(fetchedCards);
         setCards(shuffled);
-        // Rotaciones aleatorias
+
         const transforms = shuffled.map(() => ({
-          rotate: Math.floor(Math.random() * 31 - 15), 
-          x: Math.floor(Math.random() * 12 - 6),      
-          y: Math.floor(Math.random() * 12 - 6),  
+          rotate: Math.floor(Math.random() * 31 - 15),
+          x: Math.floor(Math.random() * 12 - 6),
+          y: Math.floor(Math.random() * 12 - 6),
         }));
         setCardTransforms(transforms);
       })
@@ -131,8 +131,8 @@ export default function ReadingPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.6,
-                ease: "easeOut",
-                delay: index * 0.1, 
+                ease: easeOut,
+                delay: index * 0.1,
               }}
               style={{
                 display: "inline-block",

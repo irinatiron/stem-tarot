@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { getCardById } from "../services/tarotService";
-import { TarotCard } from "../types/tarot";
+import type { TarotCard } from "../types/tarot";
 import styles from "./CardDetailPage.module.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import StyledButtonComponent from "../components/StyledButton";

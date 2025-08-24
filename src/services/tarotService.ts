@@ -1,4 +1,4 @@
-import { TarotCard } from "../types/tarot";
+import type { TarotCard } from "../types/tarot";
 
 const API_URL = "https://6872278c76a5723aacd3cbb3.mockapi.io/api/v1/tarot";
 

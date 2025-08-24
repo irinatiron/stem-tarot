@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import { getAllCards } from "../services/tarotService";
-import { TarotCard } from "../types/tarot";
+import type { TarotCard } from "../types/tarot";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import styles from "./HomePage.module.css";
 import Galaxy from "../components/GalaxyBackground";
 
 export default function HomePage() {
   const [cards, setCards] = useState<TarotCard[]>([]);
-  const [cardTransforms, setCardTransforms] = useState<
-    { rotate: number; x: number; y: number }[]
-  >([]);
-  // Barajar el orden de las cartas
+  const [cardTransforms, setCardTransforms] = useState<{ rotate: number; x: number; y: number }[]>([]);
+
   const shuffleArray = <T,>(array: T[]): T[] => {
     const shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -26,11 +24,10 @@ export default function HomePage() {
       .then((cards) => {
         const shuffled = shuffleArray(cards); 
         setCards(shuffled);
-        // Rotación aleatoria para las cartas
         const transforms = shuffled.map(() => ({
-          rotate: Math.floor(Math.random() * 31 - 15), 
-          x: Math.floor(Math.random() * 12 - 6),       
-          y: Math.floor(Math.random() * 12 - 6),   
+          rotate: Math.floor(Math.random() * 31 - 15),
+          x: Math.floor(Math.random() * 12 - 6),
+          y: Math.floor(Math.random() * 12 - 6),
         }));
         setCardTransforms(transforms);
       })
@@ -41,7 +38,9 @@ export default function HomePage() {
     <div className="mainContainer">
       <Galaxy />
       <h1 className="pageTitle">Cartas del Tarot</h1>
-      <p className="pageIntro">Explora las 22 cartas de los Arcanos Mayores del Tarot. Cada una encierra símbolos y arquetipos que revelan aspectos esenciales de la experiencia humana. Haz clic en una carta para descubrir su interpretación y la diosa contemporánea asociada.</p>
+      <p className="pageIntro">
+        Explora las 22 cartas de los Arcanos Mayores del Tarot. Cada una encierra símbolos y arquetipos que revelan aspectos esenciales de la experiencia humana. Haz clic en una carta para descubrir su interpretación y la diosa contemporánea asociada.
+      </p>
 
       <div className={styles.cardsContainer}>
         {cards.map((card, index) => {
@@ -53,7 +52,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{
                 duration: 0.6,
-                ease: "easeOut",
+                ease: easeOut,
                 delay: index * 0.1, 
               }}
               style={{

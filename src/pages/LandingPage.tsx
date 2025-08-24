@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import { useState } from "react";
 import styles from "./LandingPage.module.css";
 import Line from "../components/Line";
@@ -15,10 +15,10 @@ export default function LandingPage() {
 
   const pageVariants = {
     initial: { opacity: 1, filter: "blur(0px)", scale: 1 },
-    exit: { opacity: 0, filter: "blur(1000px)", scale: 0.9},
+    exit: { opacity: 0, filter: "blur(1000px)", scale: 0.9 },
   };
 
-  const pageTransition = { duration: 3, ease: "easeInOut" };
+  const pageTransition = { duration: 3, ease: easeInOut };
 
   return (
     <AnimatePresence>
