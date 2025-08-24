@@ -110,8 +110,10 @@ h2 {
 }
 
 h3 {
-  font-family: "Mullingar", serif;
-  font-weight: 500;
+ font-family: 'Aboreto', serif;
+  color: rgba(255, 255, 255, 1);
+  font-size: 1.4em;
+  margin: 5px 0;
 }
 
 p, li {

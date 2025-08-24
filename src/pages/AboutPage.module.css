@@ -1,5 +1,20 @@
 .section {
-    margin: 1% 5% 0%;
+  margin: 1% 5% 0%;
+}
+
+.important {
+  text-decoration: underline;
+  color: var(--aLightBlue);
+  font-size: 1.3em;
+}
+
+.apiLink {
+  font-family: 'Aboreto', serif;
+  color: rgba(255, 255, 255, 1);
+}
+
+.iconLink h3 {
+  margin: 15px 0;
 }
 
 .aboutList {
@@ -9,33 +24,55 @@
 
 .aboutList li {
   position: relative;
-  padding-left: 2em; 
-  margin-bottom: 0.5em;
+  padding-left: 2em;
+  margin: 0.5em 0;
 }
 
 .aboutList li::before {
-  display: inline-block;   
-  margin-right: 0.5rem;  
+  display: inline-block;
+  margin-right: 0.5rem;
 }
 
-
 .aboutList li:nth-child(1)::before {
-  content: "✨"; 
+  content: "✨";
 }
 
 .aboutList li:nth-child(2)::before {
-  content: "🔮"; 
+  content: "🔮";
 }
 
 .aboutList li:nth-child(3)::before {
-  content: "🌙"; 
+  content: "🌙";
 }
 
 .aboutList li:nth-child(4)::before {
-  content: "⭐"; 
+  content: "⭐";
 }
 
 .aboutList li:nth-child(5)::before {
-  content: "🪄"; 
+  content: "🪄";
 }
 
+.about {
+  padding: 2rem;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 2rem; 
+  margin-top: 2rem;
+}
+
+.section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+  }
+}

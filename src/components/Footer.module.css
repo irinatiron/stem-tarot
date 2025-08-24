@@ -14,3 +14,7 @@
   margin: 0;
   letter-spacing: 1px;
 }
+
+a {
+  color: var(--pYellow);
+}
