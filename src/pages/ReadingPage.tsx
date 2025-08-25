@@ -18,8 +18,9 @@ export default function ReadingPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [modalImage, setModalImage] = useState<string | null>(null);
   const [modalTitle, setModalTitle] = useState("");
-
   const positions = ["Pasado", "Presente", "Futuro"];
+  const [modalCredit, setModalCredit] = useState<{ author: string; licenseUrl: string } | null>(null);
+
   // Bloquear scroll del body cuando el modal está abierto
   useEffect(() => {
     if (showModal) {
@@ -101,10 +102,17 @@ export default function ReadingPage() {
   const prevIndex = (currentIndex - 1 + 3) % 3;
   const nextIndex = (currentIndex + 1) % 3;
 
-  const openModal = (imageSrc: string, title: string) => {
+  const openModal = (
+    imageSrc: string,
+    title: string,
+    author: string,
+    licenseUrl: string
+  ) => {
     setModalImage(imageSrc);
     setModalTitle(title);
+    setModalCredit({ author, licenseUrl });
   };
+
 
   const closeModal = () => {
     setModalImage(null);
@@ -183,7 +191,14 @@ export default function ReadingPage() {
                       src={currentCard.card.arcaneImage.imageSrc}
                       alt={currentCard.card.arcaneName}
                       className={`${styles.arcaneImage} ${styles.clickableImage}`}
-                      onClick={() => openModal(currentCard.card.arcaneImage.imageSrc, currentCard.card.arcaneName)}
+                      onClick={() =>
+                        openModal(
+                          currentCard.card.arcaneImage.imageSrc,
+                          currentCard.card.arcaneName,
+                          currentCard.card.arcaneImage.author,
+                          currentCard.card.arcaneImage.license
+                        )
+                      }
                     />
                     {currentCard.card.arcaneDescription}
                   </p>
@@ -195,7 +210,14 @@ export default function ReadingPage() {
                       src={currentCard.card.goddessImage.imageSrc}
                       alt={currentCard.card.goddessName}
                       className={`${styles.goddessImage} ${styles.clickableImage}`}
-                      onClick={() => openModal(currentCard.card.goddessImage.imageSrc, currentCard.card.goddessName)}
+                      onClick={() =>
+                        openModal(
+                          currentCard.card.goddessImage.imageSrc,
+                          currentCard.card.goddessName,
+                          currentCard.card.goddessImage.author,
+                          currentCard.card.goddessImage.licenseUrl
+                        )
+                      }
                     />
                     {currentCard.card.goddessDescription}
                   </p>
@@ -222,12 +244,26 @@ export default function ReadingPage() {
         </div>
       )}
 
-      {/* Modal imagen expandida */}
-      {modalImage && (
-        <div className={styles.imageModal}>
-          <div className={styles.modalContent}>
-            <button className={styles.modalClose} onClick={closeModal}><IoIosCloseCircle /></button>
-            <img src={modalImage} alt={modalTitle} className={styles.modalImage} />
+      {/* Modal para mostrar imágenes expandidas */}
+      {modalImage && modalCredit && (
+        <div className={styles.imageModal} onClick={closeModal}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.modalClose} onClick={closeModal}>
+              <IoIosCloseCircle />
+            </button>
+
+            <div className={styles.imageWrapper}>
+              <img src={modalImage} alt={modalTitle} className={styles.modalImage} />
+              <div className={styles.creditBadge}>
+                ©
+                <div className={styles.creditInfo}>
+                  Autor: {modalCredit.author} <br />
+                  <a href={modalCredit.licenseUrl} target="_blank" rel="noreferrer">
+                    Licencia
+                  </a>
+                </div>
+              </div>
+            </div>
             <div className={styles.modalTitle}>{modalTitle}</div>
           </div>
         </div>
