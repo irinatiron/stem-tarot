@@ -113,7 +113,6 @@ export default function ReadingPage() {
     setModalCredit({ author, licenseUrl });
   };
 
-
   const closeModal = () => {
     setModalImage(null);
     setModalTitle("");
@@ -187,38 +186,60 @@ export default function ReadingPage() {
                 <div className={styles.cardSection}>
                   <h2 className={getTitleClass(currentIndex)}>{currentCard.card.arcaneName}</h2>
                   <p className={styles.arcaneDescription}>
-                    <img
-                      src={currentCard.card.arcaneImage.imageSrc}
-                      alt={currentCard.card.arcaneName}
-                      className={`${styles.arcaneImage} ${styles.clickableImage}`}
-                      onClick={() =>
-                        openModal(
-                          currentCard.card.arcaneImage.imageSrc,
-                          currentCard.card.arcaneName,
-                          currentCard.card.arcaneImage.author,
-                          currentCard.card.arcaneImage.license
-                        )
-                      }
-                    />
+                    <div className={styles.imageWrapper}>
+                      <img
+                        src={currentCard.card.arcaneImage.imageSrc}
+                        alt={currentCard.card.arcaneName}
+                        className={`${styles.arcaneImage} ${styles.clickableImage}`}
+                        onClick={() =>
+                          openModal(
+                            currentCard.card.arcaneImage.imageSrc,
+                            currentCard.card.arcaneName,
+                            currentCard.card.arcaneImage.author,
+                            currentCard.card.arcaneImage.license
+                          )
+                        }
+                      />
+                      <div className={styles.creditBadge}>
+                        ©
+                        <div className={styles.creditInfo}>
+                          Autor: {currentCard.card.arcaneImage.author} <br />
+                          <a href={currentCard.card.arcaneImage.license} target="_blank" rel="noreferrer">
+                            Licencia
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                     {currentCard.card.arcaneDescription}
                   </p>
                 </div>
                 <div className={styles.cardSection}>
                   <h2 className={getTitleClass(currentIndex)}>Diosa asociada: {currentCard.card.goddessName}</h2>
                   <p className={styles.goddessDescription}>
-                    <img
-                      src={currentCard.card.goddessImage.imageSrc}
-                      alt={currentCard.card.goddessName}
-                      className={`${styles.goddessImage} ${styles.clickableImage}`}
-                      onClick={() =>
-                        openModal(
-                          currentCard.card.goddessImage.imageSrc,
-                          currentCard.card.goddessName,
-                          currentCard.card.goddessImage.author,
-                          currentCard.card.goddessImage.licenseUrl
-                        )
-                      }
-                    />
+                    <div className={styles.imageWrapper}>
+                      <img
+                        src={currentCard.card.goddessImage.imageSrc}
+                        alt={currentCard.card.goddessName}
+                        className={`${styles.goddessImage} ${styles.clickableImage}`}
+                        onClick={() =>
+                          openModal(
+                            currentCard.card.goddessImage.imageSrc,
+                            currentCard.card.goddessName,
+                            currentCard.card.goddessImage.author,
+                            currentCard.card.goddessImage.licenseUrl
+                          )
+                        }
+                      />
+                      <div className={styles.creditBadge}>
+                        ©
+                        <div className={styles.creditInfo}>
+                          Autor: {currentCard.card.goddessImage.author} <br />
+                          <a href={currentCard.card.goddessImage.licenseUrl} target="_blank" rel="noreferrer">
+                            Licencia
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                     {currentCard.card.goddessDescription}
                   </p>
                 </div>

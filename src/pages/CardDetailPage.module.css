@@ -44,6 +44,7 @@
     height: auto;
     border-radius: 15px;
     filter: drop-shadow(5px 5px 5px var(--pBlack));
+    border: 1px solid var(--aLightBlue);
 }
 
 .creditBadge {

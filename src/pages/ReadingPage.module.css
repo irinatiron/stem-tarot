@@ -119,30 +119,18 @@
   padding: 10px;
 }
 
-.arcaneImage {
+.arcaneImage, .goddessImage {
   max-width: 300px;
   width: 100%;
   border: 1px solid var(--aLightBlue);
   border-radius: 15px;
   filter: drop-shadow(5px 5px 5px var(--pBlack));
   float: left;
-
 }
 
 .arcaneDescription .arcaneImage,
 .goddessDescription .goddessImage {
   margin-right: 25px;
-}
-
-.goddessImage {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  border: 1px solid var(--aLightBlue);
-  border-radius: 15px;
-  float: left;
 }
 
 .arcaneImage:hover,
@@ -263,45 +251,48 @@
 }
 
 .imageWrapper {
-  position: relative;
-  display: inline-block;
-  width: fit-content;
+  position: relative; 
+  display: inline-block; 
+  float: left; 
 }
 
 .creditBadge {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #fff;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 50%;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: help;
+  position: absolute;
+  top: 12px; 
+  left: 3px; 
+  transform: translate(25%, -25%); 
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: help;
+  z-index: 2;
 }
 
+
 .creditInfo {
-    display: none;
-    position: absolute;
-    top: 28px;
-    left: 0;
-    background: rgba(0, 0, 0, 0.85);
-    color: #fff;
-    font-size: 10px;
-    text-align: center;
-    padding: 4px 6px;
-    border-radius: 4px;
-    white-space: nowrap;
-    z-index: 10;
+  display: none;
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  padding: 4px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: 10;
 }
 
 .creditBadge:hover .creditInfo {
-    display: block;
+  display: block;
 }
 
 
@@ -311,7 +302,7 @@
     width: 100%;
     border-radius: 0px;
     max-height: 90vh;
-    padding: 60px 0 60px;
+    padding: 60px 20px 60px;
   }
 
   .modalTitle {
